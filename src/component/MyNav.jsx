@@ -1,9 +1,9 @@
-import { Component } from "react";
-import { Container, Navbar, Nav } from "react-bootstrap";
+
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 
-class MyNav extends Component {
-    render() {
+const MyNav = props => {
+    
         return (
             <Navbar expand="lg">
             <Container fluid="md">
@@ -14,12 +14,17 @@ class MyNav extends Component {
                     <Nav.Link href="#">Home</Nav.Link>
                     <Nav.Link href="#">About</Nav.Link>
                     <Nav.Link href="#">Browse</Nav.Link>
+                    <NavDropdown title="Categories" id="navbarScrollingDropdown">
+
+                    
+                    {props.categories}
+                   
+                    </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
         )
-    }
 }
 
 export default MyNav
